@@ -1,5 +1,7 @@
+<app-input-field (updateDataEvent)="updateData($event)"></app-input-field>
+
 <ul class="list-group">
   <li *ngFor="let input of inputs" class="list-group-item">
-    {{ input }}
+    <div *ngIf="searchText === '' || input.includes(searchText)">{{ input }}</div> 
   </li>
 </ul>
