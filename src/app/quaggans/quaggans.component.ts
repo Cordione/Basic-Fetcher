@@ -8,6 +8,7 @@ import { ApiRequest } from '../services/apiRequest.service';
 export class QuaggansComponent implements OnInit {
   inputs: string[] = [];
   searchText: string = '';
+  wayItWasSorted: string = 'asc';
   constructor(private service: ApiRequest) {}
 
   updateData(item: string) {
@@ -21,5 +22,17 @@ export class QuaggansComponent implements OnInit {
         this.inputs = response.filter((x) => x != '404');
       });
   }
-  ngOnChanges() {}
+  sortMe() {
+    if (this.wayItWasSorted == 'asc') {
+      this.inputs.sort((a, b) =>
+        b.toLowerCase().localeCompare(a.toLowerCase())
+      );
+      this.wayItWasSorted = 'desc';
+    } else if (this.wayItWasSorted == 'desc') {
+      this.inputs.sort((a, b) =>
+        a.toLowerCase().localeCompare(b.toLowerCase())
+      );
+      this.wayItWasSorted = 'asc';
+    }
+  }
 }

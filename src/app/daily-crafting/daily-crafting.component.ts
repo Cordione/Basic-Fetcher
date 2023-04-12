@@ -10,6 +10,7 @@ export class DailyCraftingComponent implements OnInit {
   inputs: string[] = [];
   rawInputs: string[] = [];
   searchText: string = '';
+  wayItWasSorted: string = 'asc';
   constructor(private service: ApiRequest) {}
 
   updateData(item: string) {
@@ -29,5 +30,18 @@ export class DailyCraftingComponent implements OnInit {
           });
         });
       });
+  }
+  sortMe() {
+    if ((this.wayItWasSorted == 'asc')) {
+      this.inputs.sort((a, b) =>
+        b.toLowerCase().localeCompare(a.toLowerCase())
+      );
+      this.wayItWasSorted = 'desc';
+    } else if ((this.wayItWasSorted == 'desc')) {
+      this.inputs.sort((a, b) =>
+        a.toLowerCase().localeCompare(b.toLowerCase())
+      );
+      this.wayItWasSorted = 'asc';
+    }
   }
 }
