@@ -9,8 +9,12 @@ import { ApiRequest } from '../services/apiRequest.service';
 export class DailyCraftingComponent implements OnInit {
   inputs: string[] = [];
   rawInputs: string[] = [];
-
+  searchText: string = '';
   constructor(private service: ApiRequest) {}
+
+  updateData(item: string) {
+    this.searchText = item;
+  }
 
   ngOnInit() {
     this.service
