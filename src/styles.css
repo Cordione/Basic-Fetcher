@@ -1,0 +1,13 @@
+body {
+  --text-color: #222;
+  --bkg-color: #fff;
+  --btn-txt-color: white;
+  --btn-bg-color: rgb(11, 88, 160);
+}
+body.dark-theme {
+  --text-color: #eee;
+  --bkg-color: #252222;
+}
+body {
+  background: var(--bkg-color);
+}

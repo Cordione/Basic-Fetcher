@@ -9,6 +9,8 @@ export class AppComponent {
 
   constructor() {
   }
-
+  toggleDarkTheme(): void {
+    document.body.classList.toggle('dark-theme');
+  }
   ngOnInit() {}
 }
