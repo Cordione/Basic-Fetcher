@@ -7,9 +7,10 @@ import { TopHeaderComponent } from './top-header/top-header.component';
 import { QuaggansComponent } from './quaggans/quaggans.component';
 import { DailyCraftingComponent } from './daily-crafting/daily-crafting.component';
 import { InputFieldComponent } from './input-field/input-field.component';
+import { SortableFilterableListComponent } from './sortable-filterable-list/sortable-filterable-list.component';
 
 @NgModule({
-  declarations: [AppComponent, TopHeaderComponent, QuaggansComponent, DailyCraftingComponent, InputFieldComponent],
+  declarations: [AppComponent, TopHeaderComponent, QuaggansComponent, DailyCraftingComponent, InputFieldComponent, SortableFilterableListComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,8 +1,1 @@
-<app-input-field (updateDataEvent)="updateData($event)"></app-input-field>
-
-<ul class="list-group" >
-  <li (click)="sortMe()">Sortable Header</li>
-  <li *ngFor="let input of inputs" class="list-group-item" >
-    <div *ngIf="searchText === '' || input.includes(searchText)" >{{ input }}</div> 
-  </li>
-</ul>
+<app-sortable-filterable-list [inputs]="inputs"></app-sortable-filterable-list>
